@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 0.5%;
+  margin: 0;
+}
+
+main {
+  padding: 0 20%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1%;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */
