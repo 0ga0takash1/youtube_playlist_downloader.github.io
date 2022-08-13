@@ -1,25 +1,46 @@
-body { margin: 0; }
+body { 
+    margin: 0;
+    background: #efefef;
+}
 
 header {
     display: flex;
-    justify-content: center;
     padding: 0.5%;
     margin: 0;
-    // background: #FF0000;
-    // color: snow;
     
+    img {
+        padding: 0.5%;
+    }
+    h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
     button {
-        justify-content: right;
+        width: 80px;
+	    height: 80px;
+        background: pink;
+        border-color: #ff0000;
+        margin: auto 0.5% auto 0;
+        border-radius: 50%;
     }
 }
 
 main {
-    padding: 0 20%;
+    div.input {
+        padding: 1% 0;
+        // margin-left: auto;
+        // margin-right: auto;
+        background: lightgray;
+        // box-shadow: inset 0 5px 5px 1px rgba(0, 0, 0, .5);
+        label {
+            margin-left: 20%;
+        }
+        
+    }
 }
 
 footer {
     position: absolute;
     bottom: 0;
     padding: 1%;
-    justify-content: center;
 }
