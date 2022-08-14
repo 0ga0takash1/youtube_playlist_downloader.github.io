@@ -9,23 +9,30 @@
     </head>
     <body>
         <header>
-            <img src="favicon.png" width="6%" height="6%">
+            <img src="favicon.png">
             <h1>YouTube Playlist Downloader</h1>
             <button><h3>Usage</h3></button>
         </header>
         <main>
             <div class="input">
-                <label for="url">Playlist URL</label>
-                
-                <input type="url" name="url" id="url" 
-                placeholder="https://www.youtube.com/playlist?list=???"
-                pattern="https://www.youtube.com/playlist?list=*" size="100"
-                required>
-                
-                <button type="submit">Submit</button>
+                <div class="input_main">
+                    <label for="url">Playlist URL</label>
+                    <input type="url" name="url" id="url" 
+                    
+                    placeholder="https://www.youtube.com/playlist?list=???"
+                    pattern="https://www.youtube.com/playlist?list=*" size="85"
+                    required>
+                    
+                    <input type="checkbox" id="mp3" name="mp3">
+                    <label for="mp3">mp3</label>
+                    
+                    <button type="submit">Download</button>
+                </div>
             </div>
             <div class="download">
-                
+                <div class="download_main">
+                    
+                </div>
             </div>
         </main>
     </body>

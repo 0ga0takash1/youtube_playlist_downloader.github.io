@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background: #efefef;
+  max-width: 100%;
+  height: auto;
 }
 
 header {
@@ -10,6 +11,8 @@ header {
 }
 header img {
   padding: 0.5%;
+  height: 6%;
+  width: 6%;
 }
 header h1 {
   margin-left: auto;
@@ -28,8 +31,23 @@ main div.input {
   padding: 1% 0;
   background: lightgray;
 }
-main div.input label {
-  margin-left: 20%;
+main div.input div.input_main {
+  text-align: center;
+}
+main div.input div.input_main button {
+  margin-left: 1%;
+}
+main div.download {
+  background: lightgray;
+  width: 80%;
+  margin: 1% auto;
+  border-radius: 20px;
+}
+main div.download div.download_main {
+  margin: auto;
+  height: 95%;
+  width: 95%;
+  overflow: auto;
 }
 
 footer {
