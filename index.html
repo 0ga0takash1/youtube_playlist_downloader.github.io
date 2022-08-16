@@ -10,17 +10,25 @@
         <header>
             <img src="favicon.png">
             <h1>YouTube Playlist Downloader</h1>
-            <button><h3>Usage</h3></button>
+            <!-- <button><h3>Usage</h3></button> -->
+            <label class="open" for="pop-up">Usage</label>
+            <input type="checkbox" id="pop-up">
+            <div class="overlay">
+                <div class="window">
+                    <label class="close" for="pop-up">閉じる</label>
+                    <h4>本ツールの使い方</h4>
+                    <p>(1)URLを入力する</p>
+                    (2)Downloadボタンを押す
+                </div>
+            </div>
         </header>
         <main>
             <div class="input">
                 <div class="input_main">
                     <label for="url">Playlist URL</label>
-                    <input type="url" name="url" id="url" 
-                    
-                    placeholder="https://www.youtube.com/playlist?list=???"
-                    pattern="https://www.youtube.com/playlist?list=*" size="85"
-                    required>
+                    <input type="url" name="url" id="url"
+                        placeholder="https://www.youtube.com/playlist?list=???"
+                        pattern="https://www.youtube.com/playlist?list=*" size="85" required>
                     
                     <input type="checkbox" id="mp3" name="mp3">
                     <label for="mp3">mp3</label>
