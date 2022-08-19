@@ -20,6 +20,7 @@ header h1 {
   margin-right: auto;
 }
 header .open {
+  cursor: pointer;
   display: block;
   width: 70px;
   height: 70px;
@@ -30,9 +31,6 @@ header .open {
 header .open h1 {
   text-align: center;
   margin-top: 20%;
-}
-header .open {
-  cursor: pointer;
 }
 header #pop-up {
   display: none;

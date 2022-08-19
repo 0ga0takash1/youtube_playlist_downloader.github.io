@@ -20,7 +20,10 @@ header {
         margin-left: auto;
         margin-right: auto;
     }
+
     .open {
+        cursor:pointer;
+        
         display: block;
         width: 70px;
 	    height: 70px;
@@ -32,10 +35,6 @@ header {
             text-align: center;
             margin-top: 20%;
         }
-    }
-
-    .open {
-        cursor:pointer;
     }
     #pop-up {
         display: none;
