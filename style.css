@@ -6,25 +6,30 @@ body {
 
 header {
   display: flex;
-  padding: 0.5%;
   margin: 0;
+  padding: 0.1%;
 }
 header img {
-  padding: 0.5%;
-  height: 6%;
-  width: 6%;
+  margin: auto 0;
+  padding: 1%;
+  height: 5%;
+  width: 5%;
 }
 header h1 {
   margin-left: auto;
   margin-right: auto;
 }
-header input {
-  width: 80px;
-  height: 80px;
-  background: pink;
-  border-color: #ff0000;
+header .open {
+  display: block;
+  width: 70px;
+  height: 70px;
+  background: lightgray;
   margin: auto 0.5% auto 0;
   border-radius: 50%;
+}
+header .open h1 {
+  text-align: center;
+  margin-top: 20%;
 }
 header .open {
   cursor: pointer;
@@ -81,11 +86,11 @@ main div.download {
   margin: 1% auto;
   border-radius: 20px;
 }
-main div.download div.download_main {
+main div.download .download_main {
+  overflow: auto;
   margin: auto;
   height: 95%;
   width: 95%;
-  overflow: auto;
 }
 
 footer {

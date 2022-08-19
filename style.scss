@@ -7,25 +7,31 @@ body {
 
 header {
     display: flex;
-    padding: 0.5%;
     margin: 0;
+    padding: 0.1%;
     
     img {
-        padding: 0.5%;
-        height: 6%;
-        width: 6%;
+        margin: auto 0;
+        padding: 1%;
+        height: 5%;
+        width: 5%;
     }
     h1 {
         margin-left: auto;
         margin-right: auto;
     }
-    input {
-        width: 80px;
-	    height: 80px;
-        background: pink;
-        border-color: #ff0000;
+    .open {
+        display: block;
+        width: 70px;
+	    height: 70px;
+        background: lightgray;
         margin: auto 0.5% auto 0;
         border-radius: 50%;
+        // box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        h1 {
+            text-align: center;
+            margin-top: 20%;
+        }
     }
 
     .open {
@@ -89,12 +95,13 @@ main {
         width: 80%;
         margin: 1% auto;
         border-radius: 20px;
-        div.download_main {
+
+        .download_main {
+            overflow: auto;
             margin: auto;
             height: 95%;
             width: 95%;
             // background: white;
-            overflow: auto;
         }
     }
 }
