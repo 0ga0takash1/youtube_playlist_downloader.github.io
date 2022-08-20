@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    // width: 256 px;
     max-width: 100%;
     height: auto;
 }
@@ -23,14 +22,13 @@ header {
 
     .open {
         cursor:pointer;
-        
+
         display: block;
         width: 70px;
 	    height: 70px;
         background: lightgray;
         margin: auto 0.5% auto 0;
         border-radius: 50%;
-        // box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
         h1 {
             text-align: center;
             margin-top: 20%;
