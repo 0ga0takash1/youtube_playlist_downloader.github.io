@@ -1,4 +1,4 @@
-import yt_dlp, ffmpeg, subprocess, os
+import os
 
 class YouTube_Downloader:
 
@@ -8,49 +8,23 @@ class YouTube_Downloader:
         self.ffmpeg_path = "\"C:\\Users\\XXX\\ffmpeg_dl\\bin\""
 
     def DL(self):
-        # cmd = [
-        #     "yt-dlp",
-        #     "--ignore-errors",
-        #     "-x", "--audio-format", "mp3", "--audio-quality", "0",
-        #     "-o", "\"%(playlist)s/%(playlist_index)s %(title)s.%(ext)s\"",
-        #     "--embed-metadata", "--add-metadata", "--embed-thumbnail",
-        #     "--ppa", "\"EmbedThumbnail+ffmpeg_o:-c:v", "mjpeg", "-vf", "crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"\"", "--exec", "ffprobe",
-        #     "--ffmpeg-location", self.ffmpeg_path,
-        #     "-I", self.index,
-        #     self.url
-        # ]
-        # cmd = "yt-dlp --ignore-errors -x --audio-format mp3 --audio-quality 0 -o \"%(playlist)s/%(playlist_index)s %(title)s.%(ext)s\" --embed-metadata --add-metadata --embed-thumbnail --ppa \"EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"\'if(gt(ih,iw),iw,ih)\':\'if(gt(iw,ih),ih,iw)\'\"\" --exec ffprobe --ffmpeg-location \"C:\\Users\\takashi_ritsDE\\ffmpeg_dl\\bin\""
+        # コマンド用の文字列を生成
         cmd = "yt-dlp --ignore-errors -x --audio-format mp3 --audio-quality 0 -o \"%%(playlist)s/%%(playlist_index)s %%(title)s.%%(ext)s\" --embed-metadata --add-metadata --embed-thumbnail --ppa \"EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\\\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\\\"\" --exec ffprobe --ffmpeg-location "
         cmd += self.ffmpeg_path
         cmd += " -I "
         cmd += self.index
         cmd += " "
         cmd += self.url
-        # print(cmd)
-        # return
-        # cmd = r"yt-dlp --ignore-errors -x --audio-format mp3 --audio-quality 0 -o \"%(playlist)s/%(playlist_index)s %(title)s.%(ext)s\" --embed-metadata --add-metadata --embed-thumbnail --ppa \"EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"\'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\"\" --exec ffprobe --ffmpeg-location"
-        # cmd = cmd.split()
-        # cmd2 = [
-        #     'yt-dlp', 
-        #     '--ignore-errors', 
-        #     '-x', '--audio-format', 'mp3', '--audio-quality', '0', 
-        #     '-o', '\"%(playlist)s/%(playlist_index)s %(title)s.%(ext)s\"', 
-        #     '--embed-metadata', '--add-metadata', '--embed-thumbnail', 
-        #     '--ppa', '\"EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf', 'crop=\"\'if(gt(ih,iw),iw,ih)\':\'if(gt(iw,ih),ih,iw)\'\"\"', 
-        #     '--exec', 'ffprobe', '--ffmpeg-location', self.ffmpeg_path, "-I", self.index, self.url
-        # ]
-        # print(cmd)
-        # for i, c in enumerate(cmd):
-        #     print(i, c)
-
-        bat_path = "Downloader.cmd"
-        with open(bat_path, mode="w") as f:
+        
+        # cmdファイルを生成
+        cmd_path = "Downloader.cmd"
+        with open(cmd_path, mode="w") as f:
             f.write("@echo off\n")
             f.write("cd \\Users\\takashi_ritsDE\\Music\\\n")
             f.write(cmd)
-            # f.write("\npause")
-        os.system(bat_path)
-        # subprocess.run(cmd)
+        
+        # cmdファイルの実行
+        os.system(cmd_path)
         return
 
 URLs = {
@@ -75,8 +49,6 @@ if __name__ == '__main__':
     URL = str( input("URLを入力:") )
     if URL in URLs:
         URL = URLs[URL]
-        # print(URL)
-    # URL = URLs["ヒプ"]
     index = str( input("インデックス:") )
 
     YTD = YouTube_Downloader(URL, index)
