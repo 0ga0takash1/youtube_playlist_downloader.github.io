@@ -1,11 +1,34 @@
-import os
+import os, csv
+
+class Info_Playlist:
+    def __init__(self, row_csv) -> None:
+        self.name_playlist = row_csv[0]
+        self.url = row_csv[1]
+
+class CSV:
+    # メンバ変数
+    # array_playlist:Info_Pllaylist型の配列
+    def __init__(self) -> None:
+        # URL.csvファイルを読み込む
+        filename = "URL.csv"
+        with open(filename, encoding='utf8', newline='') as f:
+            self.array_playlist = []
+            for row in csv.reader(f):
+                info = Info_Playlist(row)
+                self.array_playlist.append(info)
+    
+    def print_playlist_names(self):
+        print("\n----- プレイリスト一覧 -----")
+        for i, info in enumerate(self.array_playlist):
+            print(i, info.name_playlist)
+        print("---------------------------\n")
 
 class YouTube_Downloader:
 
     def __init__(self, url, idx=":") -> None:
         self.url = "\""+url+"\""
         self.index = idx
-        self.ffmpeg_path = "\"C:\\Users\\XXX\\ffmpeg_dl\\bin\""
+        self.ffmpeg_path = "\"C:\\ffmpeg\\bin\""
 
     def DL(self):
         # コマンド用の文字列を生成
@@ -20,7 +43,7 @@ class YouTube_Downloader:
         cmd_path = "Downloader.cmd"
         with open(cmd_path, mode="w") as f:
             f.write("@echo off\n")
-            f.write("cd \\Users\\takashi_ritsDE\\Music\\\n")
+            f.write("cd \\Users\\XXX\\Music\\\n")
             f.write(cmd)
         
         # cmdファイルの実行
@@ -46,9 +69,17 @@ URLs = {
 }
 
 if __name__ == '__main__':
+    os.chdir( os.path.dirname(__file__) )
+
     URL = str( input("URLを入力:") )
-    if URL in URLs:
+    if URL == "show":
+        csv = CSV()
+        csv.print_playlist_names()
+        idx = int( input("番号を入力:") )
+        URL = csv.array_playlist[idx].url
+    elif URL in URLs:
         URL = URLs[URL]
+    
     index = str( input("インデックス:") )
 
     YTD = YouTube_Downloader(URL, index)
